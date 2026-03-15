@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #534AB7;
+  --color-primary-light: #7C72FF;
+  --color-secondary: #1D9E75;
+  --color-accent: #BA7517;
+  --color-danger: #E24B4A;
+  --color-background: #f5f5f2;
+  
+  /* Dark mode colors */
+  --color-dark-bg: #0f172a; /* Slate 900 */
+  --color-dark-card: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-slate-900 transition-colors duration-500 ease-in-out;
+  }
+  
+  .dark body {
+    @apply bg-dark-bg text-slate-100;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/40 backdrop-blur-xl border border-white/40 shadow-xl;
+}
+
+.dark .glass-panel {
+  @apply bg-slate-800/40 border-white/10 shadow-black/20;
+}
